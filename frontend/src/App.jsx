@@ -1,6 +1,6 @@
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import Navbar from './componenets/Navbar';
-import Home from './componenets/home';
+import Home from './componenets/Home';
 import Login from './componenets/login';
 import Signup from './componenets/Signup';
 import Profile from './componenets/Profile';
