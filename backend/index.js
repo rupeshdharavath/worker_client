@@ -8,8 +8,9 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 
+const port = process.env.PORT || 5000;
 
-mongoose.connect(process.env.mongo_uri)
+mongoose.connect(process.env.MONGODB_URI)
     .then(()=>console.log("db connected"))
     .catch((e)=>console.log(e.message));
 
@@ -21,4 +22,4 @@ app.use('/api/message',require('./routes/messages'));
 
 app.use('/api/slot', require('./routes/slot'));
 
-app.listen(5000);
+app.listen(port);
