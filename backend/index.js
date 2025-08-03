@@ -6,9 +6,8 @@ dotenv.config();
 
 const app = express();
 
-// ✅ REMOVE DUPLICATE `app.use(cors())`
 app.use(cors({
-  origin: ['https://worker-client.vercel.app'], 
+  origin: ['http://localhost:5173', 'https://worker-client.vercel.app'],
   credentials: true
 }));
 
@@ -20,7 +19,6 @@ mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("db connected"))
   .catch((e) => console.log(e.message));
 
-// Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/application', require('./routes/application'));
 app.use('/api/message', require('./routes/messages'));
