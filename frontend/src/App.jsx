@@ -1,7 +1,7 @@
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import Navbar from './componenets/Navbar';
 import Home from './componenets/Home';
-import Login from './componenets/login';
+import Login from './componenets/Login';
 import Signup from './componenets/Signup';
 import Profile from './componenets/Profile';
 import Applications_create from './componenets/Applications_create';
