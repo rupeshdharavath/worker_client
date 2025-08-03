@@ -15,7 +15,7 @@ function Signup(){
         if(name && email && pass && confpass && role){
             if(pass === confpass){
                 try{
-                    const res=await axios.post('http://localhost:5000/api/auth/signup',{
+                    const res=await axios.post('https://worker-client.onrender.com/api/auth/signup',{
                     name,email,password:pass,role
                 })
                 console.log(res.data.message);

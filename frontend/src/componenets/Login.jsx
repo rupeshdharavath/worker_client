@@ -12,7 +12,7 @@ function Login(){
     async function send_details(){
         if( email && pass && role){
             try{
-                    const res=await axios.post('http://localhost:5000/api/auth/login',{
+                    const res=await axios.post('https://worker-client.onrender.com/api/auth/login',{
                     email,password:pass,role
                 })
                 toast.warn(res.data.message);

@@ -16,7 +16,7 @@ function Hire() {
 
   async function send_message() {
     try {
-      const res = await axios.post('http://localhost:5000/api/message/insert', {
+      const res = await axios.post('https://worker-client.onrender.com/api/message/insert', {
         sender,
         receiver,
         sender_role,
@@ -37,7 +37,7 @@ function Hire() {
 
   async function get_msgs() {
     try {
-      const res = await axios.post('http://localhost:5000/api/message/get_messages', {
+      const res = await axios.post('https://worker-client.onrender.com/api/message/get_messages', {
         sender,
         receiver,
         job_name

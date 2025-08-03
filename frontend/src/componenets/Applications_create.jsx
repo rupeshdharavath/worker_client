@@ -30,7 +30,7 @@ function Applications_create(){
                     alert("email did not match");
                 }
                 else{
-                    const res=await axios.post('http://localhost:5000/api/application/insert',
+                    const res=await axios.post('https://worker-client.onrender.com/api/application/insert',
                         formData
                     )
                     console.log(res.data.message);

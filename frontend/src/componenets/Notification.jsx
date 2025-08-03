@@ -10,12 +10,12 @@ function Notification() {
 
   async function get_notification_details() {
     try {
-      const res = await axios.post("http://localhost:5000/api/message/get_notification", {
+      const res = await axios.post("https://worker-client.onrender.com/api/message/get_notification", {
         receiver: user_email,
         receiver_name: user_name,
         receiver_role: user_role,
       });
-      setNotification(res.data.get_all_notifications); // array of objects
+      setNotification(res.data.get_all_notifications); 
     } catch (err) {
       alert(err.message);
     }

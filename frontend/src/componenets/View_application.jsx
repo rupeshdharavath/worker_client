@@ -9,7 +9,7 @@ function View_application(){
     const {email,job_name}=location.state || {};
     async function view_particular_job_application() {
         try{
-            const res=await axios.get(`http://localhost:5000/api/application/view_particular_job_details/${email}/${job_name}`);
+            const res=await axios.get(`https://worker-client.onrender.com/api/application/view_particular_job_details/${email}/${job_name}`);
             console.log(res.data.message);
             set_jobs(res.data.jobs);
         }

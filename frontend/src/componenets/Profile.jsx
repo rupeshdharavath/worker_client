@@ -23,7 +23,7 @@ function Profile() {
 
     async function get_slot_details() {
         try {
-            const res = await axios.post('http://localhost:5000/api/slot/get_profile_details', {
+            const res = await axios.post('https://worker-client.onrender.com/api/slot/get_profile_details', {
                 client: email
             });
             setslots(res.data.applied_slot);
@@ -34,7 +34,7 @@ function Profile() {
 
     async function delete_slot(id) {
         try {
-            const res = await axios.delete('http://localhost:5000/api/slot/delete', {
+            const res = await axios.delete('https://worker-client.onrender.com/api/slot/delete', {
                 data: {
                     _id: id
                 }

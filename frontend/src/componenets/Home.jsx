@@ -16,7 +16,7 @@ function Home() {
 
   async function remove_job(remove_email, remove_job) {
     try {
-      const res = await axios.delete('http://localhost:5000/api/application/delete_job', {
+      const res = await axios.delete('https://worker-client.onrender.com/api/application/delete_job', {
         data: {
           email: remove_email,
           job_name: remove_job
@@ -31,7 +31,7 @@ function Home() {
 
   async function get_jobs() {
     try {
-      const res = await axios.get(`http://localhost:5000/api/application/get_jobs/${email}`);
+      const res = await axios.get(`https://worker-client.onrender.com/api/application/get_jobs/${email}`);
       setjobs(res.data.jobs);
     } catch (err) {
       console.log(err.message);
@@ -40,7 +40,7 @@ function Home() {
 
   async function get_job_details() {
     try {
-      const res = await axios.get('http://localhost:5000/api/application/display_jobs');
+      const res = await axios.get('https://worker-client.onrender.com/api/application/display_jobs');
       set_display_job(res.data.jobs);
     } catch (err) {
       console.log(err.message);
@@ -53,7 +53,7 @@ function Home() {
         set_searchjob_list([]);
         return;
       }
-      const res = await axios.get(`http://localhost:5000/api/application/job/${searchjob}`);
+      const res = await axios.get(`https://worker-client.onrender.com/api/application/job/${searchjob}`);
       set_searchjob_list(res.data.job_list);
     } catch (err) {
       alert(err.message);

@@ -27,7 +27,7 @@ function Fix_slot() {
 
   async function fetchBookedSlots(selectedDate) {
     try {
-      const res = await axios.post('http://localhost:5000/api/slot/get_booked_slots', {
+      const res = await axios.post('https://worker-client.onrender.com/api/slot/get_booked_slots', {
         worker,
         date: selectedDate.toDateString()
       });
@@ -44,13 +44,13 @@ function Fix_slot() {
   async function send_slot_info() {
     try {
       if (date && slot_time) {
-        const res = await axios.post('http://localhost:5000/api/slot/insert', {
+        const res = await axios.post('https://worker-client.onrender.com/api/slot/insert', {
           worker, worker_name, client, job_name,
           date: date.toDateString(), time: slot_time
         });
         toast.success(res.data.message);
         set_slot_time('');
-        fetchBookedSlots(date); // Refresh bookings
+        fetchBookedSlots(date); 
       } else {
         toast.warn("Select slot date and time");
       }
